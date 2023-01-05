@@ -1,0 +1,35 @@
+.UserChatPrev {
+  display: flex;
+  align-items: center;
+  height: 60px;
+
+  & > div {
+    padding: 0.5rem;
+
+    & > div {
+      display: flex;
+      align-items: center;
+    }
+  }
+  img {
+    width: 40px;
+    border-radius: 100%;
+  }
+
+  .username {
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  .userid {
+    font-size: 14px;
+    color: var(--clr-grey-dark);
+    margin-left: 0.3rem;
+  }
+
+  .lastMsgPrev,
+  .chatDate {
+    font-size: 10px;
+    color: var(--clr-grey-dark);
+  }
+}

@@ -1,0 +1,26 @@
+.NoChat {
+  width: 30%;
+  margin-left: 5rem;
+  margin-top: 10rem;
+  display: flex;
+  flex-direction: column;
+  h5 {
+    font-size: 36px;
+    font-weight: 600;
+  }
+
+  span {
+    margin: 2rem 0;
+    font-size: 16px;
+  }
+
+  button {
+    border: none;
+    background-color: var(--clr-p);
+    color: var(--clr-white);
+    width: 50%;
+    font-size: 16px;
+    padding: 1rem 3rem;
+    border-radius: 50px;
+  }
+}
