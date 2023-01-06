@@ -1,20 +1,16 @@
 import React from "react";
 import "./ChatBubble.scss";
-const ChatBubble = () => {
+
+type ChatBubbleType = {
+  msg: string;
+  pos: "left" | "right";
+};
+const ChatBubble = ({ msg, pos }: ChatBubbleType) => {
   return (
-    <div
-      className={`${
-        Math.round(Math.random() * 10) % 2 == 0
-          ? "ChatBubble-left"
-          : "ChatBubble-right"
-      }`}
-    >
+    <div className={`ChatBubble-${pos}`}>
       <img src="https://randomuser.me/api/portraits/women/60.jpg" alt="" />
       <div>
-        <p>
-          Didn't I tell you not to put your phone on charge just because it's
-          the weekend? Didn't I
-        </p>
+        <p>{msg}</p>
       </div>
     </div>
   );

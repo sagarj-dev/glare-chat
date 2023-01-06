@@ -1,19 +1,30 @@
 import React from "react";
+import { useAppDispatch } from "../../../Redux/hooks/redux-hooks";
+import { UserProfileModel } from "../../../Redux/models/redux-models";
+import { setCurrentUserChat } from "../../../Redux/store/data-slice/data-slice";
 import "./UserChatPrev.scss";
-const UserChatPrev = () => {
+
+type UserChatPrevType = {
+  username: string;
+};
+
+const UserChatPrev = ({ name, id }: UserProfileModel) => {
+  const dispatch = useAppDispatch();
+
   return (
-    <div className="UserChatPrev">
+    <div
+      className="UserChatPrev"
+      onClick={() => dispatch(setCurrentUserChat({ name, id }))}
+    >
       <img src="https://randomuser.me/api/portraits/women/60.jpg" alt="" />
       <div>
         <div>
-          <span className="username">Suzana Colin</span>
-          <span className="userid">@suzana</span>
+          <span className="username">{name}</span>
+          <span className="userid">{id}</span>
         </div>
-        <span className="lastMsgPrev">
-          thank a lot for your good recommendati...
-        </span>
+        <span className="lastMsgPrev">Click to Chat</span>
       </div>
-      <span className="chatDate">Dec 15</span>
+      <span className="chatDate"></span>
     </div>
   );
 };
